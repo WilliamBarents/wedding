@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { BehaviorSubject, interval, Subscription } from 'rxjs';
 import { Timer } from '../models/timer.model';
 
@@ -6,29 +6,37 @@ import { Timer } from '../models/timer.model';
   providedIn: 'root',
 })
 export class CountdownService {
-  private readonly weddingDate = new Date('2026-01-24T00:00:00');
+  private weddingDate = new Date('2026-01-24T00:00:00');
   private timerSubject = new BehaviorSubject<Timer>(
     this.calculateRemainingTime()
   );
   timer$ = this.timerSubject.asObservable();
-
   private subscription: Subscription | null = null;
 
+  constructor(private ngZone: NgZone) {}
+
   start() {
-    if (this.subscription) return; // already running
+    if (this.subscription) return;
 
-    this.subscription = interval(1000).subscribe(() => {
-      const remaining = this.calculateRemainingTime();
-      this.timerSubject.next(remaining);
+    // Run interval outside Angular to avoid triggering CD too often
+    this.ngZone.runOutsideAngular(() => {
+      this.subscription = interval(1000).subscribe(() => {
+        const remaining = this.calculateRemainingTime();
 
-      if (
-        remaining.days === 0 &&
-        remaining.hours === 0 &&
-        remaining.minutes === 0 &&
-        remaining.seconds === 0
-      ) {
-        this.stop();
-      }
+        // Back inside Angular zone to update BehaviorSubject and trigger CD
+        this.ngZone.run(() => {
+          this.timerSubject.next(remaining);
+
+          if (
+            remaining.days === 0 &&
+            remaining.hours === 0 &&
+            remaining.minutes === 0 &&
+            remaining.seconds === 0
+          ) {
+            this.stop();
+          }
+        });
+      });
     });
   }
 

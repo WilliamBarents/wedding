@@ -16,10 +16,10 @@ export class BannerComponent implements OnInit, OnDestroy {
   constructor(private countdownService: CountdownService) {}
 
   ngOnInit() {
-    // this.sub = this.countdownService.timer$.subscribe((timer) => {
-    //   this.timer = timer;
-    // });
-    // this.countdownService.start();
+    this.countdownService.start();
+    this.sub = this.countdownService.timer$.subscribe((timer) => {
+      this.timer = timer;
+    });
   }
 
   ngOnDestroy() {

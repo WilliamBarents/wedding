@@ -1,0 +1,26 @@
+.banner {
+  position: relative;
+  background-image: url("./../../../../assets/background/proposal.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: var(--banner-height);
+  color: white;
+  overflow: hidden;
+
+  // Dark + blurred overlay
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); // darkness
+    backdrop-filter: blur(5px); // blur effect
+    z-index: 1;
+  }
+
+  // Make sure content (like header) sits above the overlay
+  app-header {
+    position: relative;
+    z-index: 2;
+  }
+}

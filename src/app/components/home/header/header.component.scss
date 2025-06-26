@@ -1,0 +1,70 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+
+  &-logo {
+    font-family: "Clicker Script", cursive;
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  &-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &__item {
+      margin: 0 var(--base-margin);
+      position: relative;
+    }
+  }
+
+  .item {
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5rem 0;
+    display: inline-block;
+
+    .item-text {
+      position: relative;
+      display: inline-block;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: var(--color-primary);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s ease;
+      }
+    }
+  }
+
+  // Hover or active underline effect
+  .header-nav__item:hover .item-text::before,
+  .header-nav__item.active .item-text::before {
+    transform: scaleX(1);
+  }
+
+  &-button {
+    padding: 0.5rem 1rem;
+    background-color: var(--color-primary);
+    border: 2px solid transparent;
+    border-radius: 5px;
+    color: var(--color-charcoal);
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: var(--color-rose);
+    }
+  }
+}

@@ -1,1 +1,79 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&display=swap");
+
+:root {
+  --color-white: #fff;
+  --color-black: #000;
+  --color-primary: #f4cccc;
+  --color-charcoal: #333333;
+  --color-rose: #e0b0b0;
+
+  -border-radius-x-small: 3px;
+  --border-radius-small: 8px;
+  --border-radius-s-medium: 12px;
+  --border-radius-medium: 16px;
+  --border-radius-xxl: 100px;
+
+  --media-query-sm: 576px;
+  --media-query-md: 768px;
+  --media-query-lg: 992px;
+  --media-query-xl: 1200px;
+  --media-query-xxl: 1400px;
+
+  --x-small-margin: 4px;
+  --small-margin: 14px;
+  --base-margin: 16px;
+  --primary-margin: 24px;
+  --secondary-margin: 32px;
+  --tertiary-margin: 48px;
+  --quaternary-margin: 96px;
+  --quinary-margin: 122px;
+  --senary-margin: 140px;
+
+  --x-small-padding: 8px;
+  --small-padding: 12px;
+  --compact-padding: 14px;
+  --base-padding: 16px;
+  --primary-padding: 24px;
+  --secondary-padding: 32px;
+  --tertiary-padding: 48px;
+  --quaternary-padding: 53px;
+
+  --x-small-gap: 8px;
+  --small-gap: 12px;
+  --base-gap: 15px;
+  --primary-gap: 24px;
+  --menu-gap: 22px;
+  --secondary-gap: 32px;
+  --tertiary-gap: 48px;
+  --quaternary-gap: 65px;
+  --quinary-gap: 140px;
+
+  --small-line-height: 12px;
+  --base-line-height: 16px;
+  --compact-line-height: 20px;
+  --primary-line-height: 24px;
+  --secondary-line-height: 32px;
+  --tertiary-line-height: 48px;
+  --quaternary-line-height: 70px;
+
+  --font-size-small: 12px;
+  --font-size-s-medium: 14px;
+  --font-size-medium: 16px;
+  --font-size-l-medium: 22px;
+  --font-size-large: 24px;
+  --font-size-m-large: 28px;
+  --font-size-x-large: 32px;
+  --page-title-font-size: 36px;
+  --footer-title-font-size: 45px;
+  --font-size-xs-large: 57px;
+  --font-size-xx-large: 64px;
+
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+
+  --banner-height: 1000px;
+}

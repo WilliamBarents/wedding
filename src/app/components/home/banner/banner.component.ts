@@ -2,10 +2,11 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Timer } from '../../../models/timer.model';
 import { Subscription } from 'rxjs';
 import { CountdownService } from '../../../services/countdowntimer.service';
+import { HeaderComponent } from '../header/header.component';
 
 @Component({
   selector: 'app-banner',
-  imports: [],
+  imports: [HeaderComponent],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss',
 })

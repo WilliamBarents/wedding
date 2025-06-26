@@ -1,0 +1,57 @@
+<div class="header container">
+  <h1 class="header-logo">A&W Wedding</h1>
+
+  <ul class="header-nav">
+    <li
+      class="header-nav__item"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
+      <a [routerLink]="'/home'" class="item">
+        <span class="item-text">Home</span>
+      </a>
+    </li>
+    <li class="header-nav__item" routerLinkActive="active">
+      <a [routerLink]="'/groom-bride'" class="item">
+        <span class="item-text">Groom & Bride</span>
+      </a>
+    </li>
+    <li class="header-nav__item" routerLinkActive="active">
+      <a [routerLink]="'/love-story'" class="item">
+        <span class="item-text">Love Story</span>
+      </a>
+    </li>
+    <li class="header-nav__item" routerLinkActive="active">
+      <a [routerLink]="'/greetings'" class="item">
+        <span class="item-text">Greetings</span>
+      </a>
+    </li>
+    <li class="header-nav__item" routerLinkActive="active">
+      <a [routerLink]="'/people'" class="item">
+        <span class="item-text">People</span>
+      </a>
+    </li>
+    <li class="header-nav__item" routerLinkActive="active">
+      <a [routerLink]="'/when-where'" class="item">
+        <span class="item-text">When & Where</span>
+      </a>
+    </li>
+    <li class="header-nav__item" routerLinkActive="active">
+      <a [routerLink]="'/rsvp'" class="item">
+        <span class="item-text">RSVP</span>
+      </a>
+    </li>
+    <li class="header-nav__item" routerLinkActive="active">
+      <a [routerLink]="'/gallery'" class="item">
+        <span class="item-text">Gallery</span>
+      </a>
+    </li>
+    <li class="header-nav__item" routerLinkActive="active">
+      <a [routerLink]="'/blog'" class="item">
+        <span class="item-text">Blog</span>
+      </a>
+    </li>
+  </ul>
+
+  <button class="header-button">Admin</button>
+</div>

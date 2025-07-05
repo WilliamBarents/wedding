@@ -1,0 +1,30 @@
+<div class="date">
+  <div class="container">
+    <div class="date-img">
+      <app-single-flower-2></app-single-flower-2>
+    </div>
+    <div class="date-text">
+      <h1 class="date-text__title">The Wedding Date</h1>
+      <p class="date-text__date">{{ weddingDateString }}</p>
+
+      <div class="date-text__timer">
+        <div class="days">
+          <span class="days-number">-{{ timer?.days }}</span>
+          <span class="days-text">Days</span>
+        </div>
+        <div class="hours">
+          <span class="hours-number">-{{ timer?.hours }}</span>
+          <span class="hours-text">Hours</span>
+        </div>
+        <div class="minutes">
+          <span class="minutes-number">-{{ timer?.minutes }}</span>
+          <span class="minutes-text">Minutes</span>
+        </div>
+        <div class="seconds">
+          <span class="seconds-number">-{{ timer?.seconds }}</span>
+          <span class="seconds-text">Seconds</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

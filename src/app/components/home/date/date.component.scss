@@ -1,0 +1,76 @@
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding: calc(var(--quaternary-padding) * 2);
+  position: relative;
+  text-align: center;
+  z-index: 3;
+}
+
+.date {
+  align-items: center;
+  display: flex;
+  position: relative;
+  background-image: url("./../../../../assets/image/countdown-background.webp");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 100vh;
+  color: white;
+  overflow: hidden;
+
+  // Dark + blurred overlay
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.7); // darkness
+    backdrop-filter: blur(5px); // blur effect
+
+    z-index: 1;
+  }
+
+  &-img {
+    height: 250px;
+    width: 250px;
+  }
+
+  &-text {
+    &__title {
+      font-family: "Clicker Script", cursive;
+      font-size: calc(var(--footer-title-font-size) * 2);
+    }
+
+    &__date {
+      color: var(--color-text-1);
+      font-size: var(--font-size-large);
+      font-weight: 600;
+    }
+
+    &__timer {
+      display: flex;
+
+      .days,
+      .hours,
+      .minutes,
+      .seconds {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: 0 var(--secondary-margin);
+
+        &-number {
+          font-family: "Clicker Script", cursive;
+          font-size: calc(var(--footer-title-font-size) * 2);
+        }
+
+        &-text {
+          letter-spacing: 10px;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+}

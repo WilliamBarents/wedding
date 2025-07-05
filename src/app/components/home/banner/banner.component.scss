@@ -15,12 +15,63 @@
     inset: 0;
     background: rgba(0, 0, 0, 0.4); // darkness
     backdrop-filter: blur(5px); // blur effect
+
     z-index: 1;
   }
 
   // Make sure content (like header) sits above the overlay
   app-header {
+    margin-bottom: var(--tertiary-margin);
     position: relative;
     z-index: 2;
+  }
+
+  &-content {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    margin-top: var(--quinary-margin);
+    position: relative;
+    width: 100%;
+    z-index: 3;
+
+    &__text {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+
+      .title {
+        display: flex;
+        align-items: center;
+
+        &-dash {
+          display: inline-block;
+          width: 150px;
+          height: 3px;
+          background-color: white;
+          margin-right: 10px;
+        }
+
+        &-text {
+          font-size: calc(var(--font-size-medium) + 2px);
+          font-weight: var(-font-weight-normal);
+          text-transform: uppercase;
+          letter-spacing: calc(var(--small-line-height) - 4px);
+          margin: 0;
+          text-align: center;
+        }
+      }
+
+      .text {
+        font-family: "Clicker Script", cursive;
+        font-size: calc(var(--page-title-font-size) * 2);
+        text-align: center;
+      }
+
+      .date {
+        font-size: calc(var(--font-size-l-medium) - 2px);
+      }
+    }
   }
 }

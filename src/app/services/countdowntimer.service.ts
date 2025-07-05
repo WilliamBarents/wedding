@@ -45,6 +45,10 @@ export class CountdownService {
     this.subscription = null;
   }
 
+  getWeddingDate(): Date {
+    return this.weddingDate;
+  }
+
   private calculateRemainingTime(): Timer {
     const now = new Date();
     const diffMs = this.weddingDate.getTime() - now.getTime();

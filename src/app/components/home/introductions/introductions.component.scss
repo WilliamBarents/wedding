@@ -1,0 +1,107 @@
+.introductions {
+  align-items: center;
+  background-color: var(--color-white);
+  display: flex;
+  flex-direction: column;
+  width: 66%;
+  margin-bottom: var(--quinary-margin);
+
+  &-flower {
+    transform: rotate(-90deg);
+    margin-top: -100px;
+  }
+
+  &-title {
+    color: var(--color-cream-rose);
+    font-family: "Clicker Script", cursive;
+    font-size: calc(var(--footer-title-font-size) * 2);
+    font-weight: 400;
+    margin-bottom: var(--primary-margin);
+    margin-top: -200px;
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    font-size: calc((var(--font-size-medium) + 2px));
+    font-weight: 400;
+    text-align: center;
+
+    &__date {
+      display: block;
+      margin: var(--primary-margin) 0;
+    }
+  }
+
+  &-image {
+    display: flex;
+
+    &__selfie {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+
+      .selfie {
+        border-radius: 50%;
+        height: var(--profile-image-height);
+        object-fit: cover;
+        width: var(--profile-image-height);
+      }
+
+      .name {
+        color: var(--color-cream-rose);
+        font-family: "Clicker Script", cursive;
+        font-size: var(--font-size-x-large);
+        margin-top: var(--primary-margin);
+      }
+
+      .title {
+        border: 1px solid var(--color-cream-rose);
+        color: var(--color-cream-rose);
+        font-size: var(--font-size-s-medium);
+        letter-spacing: 10px;
+        text-transform: uppercase;
+        padding: calc(var(--x-small-padding) - 6px);
+      }
+    }
+
+    &__ring {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 400px;
+      position: relative;
+      width: 200px;
+
+      .diamond {
+        width: 100px;
+      }
+
+      .ring {
+        align-items: flex-end;
+        justify-content: flex-end;
+        display: flex;
+
+        &-left,
+        &-right {
+          background-color: transparent;
+          border-radius: 50%;
+          height: 100px;
+          position: relative;
+          width: 100px;
+        }
+
+        &-left {
+          border: 8px solid var(--color-ring-men);
+          transform: translate(18%);
+        }
+
+        &-right {
+          border: 8px solid var(--color-ring-women);
+          transform: translate(-18%);
+        }
+      }
+    }
+  }
+}

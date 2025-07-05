@@ -3,28 +3,27 @@ import { Timer } from '../../../models/timer.model';
 import { Subscription } from 'rxjs';
 import { CountdownService } from '../../../services/countdowntimer.service';
 import { HeaderComponent } from '../header/header.component';
+import { FlowerComponent } from '../svg/flower/flower.component';
+import { DataFormatterService } from '../../../services/data-formatter.service';
 
 @Component({
   selector: 'app-banner',
-  imports: [HeaderComponent],
+  imports: [HeaderComponent, FlowerComponent],
   templateUrl: './banner.component.html',
   styleUrl: './banner.component.scss',
 })
 export class BannerComponent implements OnInit, OnDestroy {
-  timer: Timer | null = null;
-  private sub: Subscription | null = null;
+  constructor(
+    private countdownService: CountdownService,
+    private dataFormatter: DataFormatterService
+  ) {}
 
-  constructor(private countdownService: CountdownService) {}
+  ngOnInit() {}
 
-  ngOnInit() {
-    this.countdownService.start();
-    this.sub = this.countdownService.timer$.subscribe((timer) => {
-      this.timer = timer;
-    });
+  get getWeddingDate() {
+    const date = this.countdownService.getWeddingDate();
+    return this.dataFormatter.formatDate(date, 'short');
   }
 
-  ngOnDestroy() {
-    this.sub?.unsubscribe();
-    this.countdownService.stop();
-  }
+  ngOnDestroy() {}
 }
